@@ -20,6 +20,13 @@ app.use(express.static(path.join(__dirname, 'public'))); //设置静态资源目
 
 app.use(express.urlencoded({limit:'100mb', extended:true})); //解析post请求,让req.body可用
 
+app.use('/', function(req,res,next){
+	if(req.path === '/'){
+		res.render('expanded-toc');
+	}else{
+		next();
+	}
+});
 app.use('/', indexRouter); //添加主路由
 app.use('/users', usersRouter); //添加用户路由(空)
 

@@ -1,11 +1,2 @@
-# 图形文件
-SCRATCH/
-
-# xmind,mmap,svg
-translateTool/**/*.xmind
-translateTool/**/*.mmap
-translateTool/**/*.svg
-translateTool/**/*.eddx
-
 # node_modules
 ./translateTool/SVGserver/node_modules/

@@ -11,15 +11,17 @@ router.get('/', function(req, res, next) { //错误页面
   res.render('error');
 });
 
+
 //添加/*的get和post路由:
 router.get('/*',sendFile);
 router.post('/*',handlePost);
 
 
-
 //---函数定义区-----------------------------------------
 function sendFile(req,res){
-	let trimSlash = req.path.replace('/',''); //path的结构"/path1/path2/.../×××.html",清除path字符串开头的反斜杠
+	console.log(`req.url is ${req.url}`);
+	console.log('hello');
+	let trimSlash = req.path.replace(/^\//,''); //path的结构"/path1/path2/.../×××.html",清除path字符串开头的反斜杠
 	let fileName = trimSlash.replace('.html',''); //清除文件后缀名
 	res.render(fileName);
 }
