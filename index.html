@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>svgserver</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="vendor/vue.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'svgserver',
+      repo: '',
+      notFoundPage: 'my404.md', //自定义404页面
+      markdown: { //实现md文件内指向子目录的链接可以用相对位置而非写全整个目录位置
+        smartypants: true,
+        renderer: {
+          link: function(href,title,text) { //个性化md链接的编译
+            var temp = window.location.href.replace(/\/\?id=[\w.-_]*/g, '/'); //去除href中可能存在的查询字符串
+            href = href.replace(/^\//, temp);
+            return `<a href=${href}>${text}</a>`;
+          }
+        }
+      }
+    }
+  </script>
+  <script src="vendor/docsify.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/tinymce/tinymce.js"></script>
+    <script type="text/javascript">
+      tinymce.init({
+        selector: '#spec',
+        plugins: 'code fullscreen',
+        toolbar: "fullscreen",
+        branding: false,
+        height: '100vh',
+        toolbar_sticky: true
+      });      
+    </script>
+    <script src="javascripts/users/contextmenu.js"></script>
+  </head>
+  ﻿<body>
+    <form method="post" enctype="application/x-www-form-urlencoded">
+      <textarea id="spec" name="spec">{{{body}}}</textarea>
+      <button type="submit">保存</button>
+    </form>
+  </body>
+</html>
