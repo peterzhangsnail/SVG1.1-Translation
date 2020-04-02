@@ -34,7 +34,7 @@ window.onload = function(){
      scroll.innerHTML = "转到";
      addScrollEvent(e,scroll,menu); //添加事件
 
-     var open = document.createElement('div'); //新窗口打开链接的选项
+     var open = document.createElement('div'); //新窗口打开链接的选项D
      open.innerHTML = "新窗口打开";
      addOpenEvent(e,open,menu); //添加事件
 
@@ -50,15 +50,31 @@ window.onload = function(){
      scroll.addEventListener(
       'click', 
       function(e,menu,evt){
-       if(e.target.href && typeof e.target.href == 'string'){
-         var href = e.target.href;
-         var match = href.match(/#[^#]+$/);
-         var id = Array.isArray(match) ? match[0] : false;
 
-         window.location.hash = win.location.hash = id; //内部hash值改变,外部随之改变
-       }
+        function scroll(){
+           if(e.target.href && typeof e.target.href == 'string'){
+             var href = e.target.href;
+             var match = href.match(/#[^#]+$/);
+             var id = Array.isArray(match) ? match[0] : false;
 
-       body.removeChild(menu); //点击之后移除该元素   
+             window.location.hash = win.location.hash = id; //内部hash值改变,外部随之改变
+             return true; //成功修改hash值,返回true
+           }
+           return false; //不满足条件,未能修改hash值,返回false
+        }
+
+        var temp = null; //定义用于保存e.target的父节点的变量
+        while(e.target != null){
+            if(scroll()){
+              break; //scroll()返回true,跳出循环
+            }
+
+            temp = e.target.parentNode; //保存e.target的父节点
+            e = {}; //因为最初的e是Event接口的实例,e.target是只读的,不能赋新值.我们这里将e替换为空对象
+            e.target = temp; //将保存的父节点传给空对象的target属性(向上取父节点,继续循环)
+        }
+
+       body.removeChild(menu); //点击之后将菜单元素从dom移除  
      }.bind(null,e,menu) //必须用bind将上一次右键事件的event对象(e)传递给本次click事件的回调函数,这样才能获取锚点的信息
     );
    }
