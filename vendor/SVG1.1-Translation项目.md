@@ -1,5 +1,5 @@
-<div style="dragable:true;overflow:scroll;position:fixed;top:0px;left:0px;with:100vw;height:100vh;"></div>
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" height="871" viewBox="0 0 1978 871" xmlns="http://www.w3.org/2000/svg" width="1978" preserveAspectRatio="xMidYMid meet"><style type="text/css"><![CDATA[
+<div style="overflow:scroll;position:fixed;top:0px;left:0px;width:100vw;height:100vh;"></div>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" viewBox="0 0 1978 871" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><style type="text/css"><![CDATA[
 .st6 {fill:#0e7c67;font-family:宋体;font-size:14pt}
 .st7 {fill:#1f6391;font-family:宋体;font-size:10pt}
 .st5 {fill:#1f6391;font-family:宋体;font-size:12pt}
