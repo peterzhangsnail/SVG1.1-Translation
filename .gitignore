@@ -1,9 +1,7 @@
 # node_modules
 /translateTool/SVGserver/node_modules/
 
-
 # views目录非布局hbs
-/translateTool/SVGserver/views/
-/translateTool/SVGserver/views/!layout.hbs
-/translateTool/SVGserver/views/!error.hbs
-
+/translateTool/SVGserver/views/*.hbs
+!/translateTool/SVGserver/views/layout.hbs
+!/translateTool/SVGserver/views/error.hbs
